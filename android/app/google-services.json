@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "535464369860",
+    "firebase_url": "https://final-933f6-default-rtdb.firebaseio.com",
+    "project_id": "final-933f6",
+    "storage_bucket": "final-933f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535464369860:android:cd81e2e4714b5badcfb391",
+        "android_client_info": {
+          "package_name": "com.example.whats_up_clone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "535464369860-folhkd5lk6aflr0otkjm2hqqt6ni7m9j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEHlpOGE02Z8-6oG1kA8hSq01Cdtc4vtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "535464369860-folhkd5lk6aflr0otkjm2hqqt6ni7m9j.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "535464369860-2va23tb95eequ3p7hddhaseg8lr9sa77.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.whatsUpClone"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
