@@ -3,7 +3,7 @@ import 'package:whatsapp_ui/features/auth/screens/login_screen.dart';
 import 'package:whatsapp_ui/features/auth/screens/otp_screen.dart';
 import 'package:whatsapp_ui/features/auth/screens/user_information.dart';
 import 'package:whatsapp_ui/features/select_contacts/screeens/select_contacts_screen.dart';
-import 'package:whatsapp_ui/screens/mobile_chat_screen.dart';
+import 'package:whatsapp_ui/features/chat/screens/mobile_chat_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -22,7 +22,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case MobileChatScreen.routeName:
       final arguments = settings.arguments as Map<String, dynamic>;
       final name = arguments['name'];
-      return MaterialPageRoute(builder: (context) => MobileChatScreen());
+      final uid = arguments['uid'];
+      return MaterialPageRoute(builder: (context) => MobileChatScreen(
+        name: name,
+        uid: uid,
+      ));
     default:
       return MaterialPageRoute(
           builder: (context) => const Scaffold(

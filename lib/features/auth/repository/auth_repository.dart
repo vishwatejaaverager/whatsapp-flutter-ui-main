@@ -10,7 +10,7 @@ import 'package:whatsapp_ui/common/utils/utills.dart';
 import 'package:whatsapp_ui/features/auth/screens/otp_screen.dart';
 import 'package:whatsapp_ui/features/auth/screens/user_information.dart';
 import 'package:whatsapp_ui/models/user_model.dart';
-import 'package:whatsapp_ui/screens/mobile_chat_screen.dart';
+import 'package:whatsapp_ui/features/chat/screens/mobile_chat_screen.dart';
 import 'package:whatsapp_ui/screens/mobile_layout_screen.dart';
 
 final authRepositoryProvider = Provider((ref) => AuthRepository(
@@ -27,7 +27,7 @@ class AuthRepository {
     var userData =
         await firestore.collection('users').doc(auth.currentUser?.uid).get();
 
-    if (userData.data()!= null) {
+    if (userData.data() != null) {
       userModel = UserModel.fromMap(userData.data()!);
       print("userrrrrrrrrrrrr found");
     }
@@ -85,7 +85,7 @@ class AuthRepository {
           uid: uid,
           profilePic: photoUrl,
           isOnline: true,
-          phoneNumber: auth.currentUser!.phoneNumber.toString() ,
+          phoneNumber: auth.currentUser!.phoneNumber!,
           groupId: []);
 
       await firestore.collection('users').doc(uid).set(user.toMap());
@@ -96,5 +96,13 @@ class AuthRepository {
     } catch (e) {
       showSnackBar(context: context, content: e.toString());
     }
+  }
+
+  Stream<UserModel > userData(String userId) {
+    return firestore
+        .collection('users')
+        .doc(userId)
+        .snapshots()
+        .map((event) => UserModel.fromMap(event.data()!));
   }
 }

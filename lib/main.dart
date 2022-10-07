@@ -40,7 +40,7 @@ class MyApp extends ConsumerWidget {
           }
           return const MobileLayoutScreen();
         }, error: ((error, stackTrace) {
-          
+           
           return Scaffold(
               backgroundColor: Colors.red,
               body: Center(child: Text(stackTrace.toString())));
